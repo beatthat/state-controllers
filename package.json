@@ -1,6 +1,6 @@
 {
   "name": "unity-state-controllers",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "cManage state for an object as a collection of bool, float, and int properties (as Animator does) while also allowing those properties to be more easily shared (as Components)",
   "main": "index.js",
   "repository": {
@@ -20,7 +20,8 @@
   "homepage": "https://github.com/beatthat/unity-state-controllers",
   "scripts": {
     "postinstall": "node scripts/postinstall.js",
-    "install:test": "rm -f *.tgz && npm pack && cd test && npm run clean && npm install"
+    "install:test": "rm -f *.tgz && npm pack && cd test && npm run clean && npm install",
+    "clean": "rm -f *.tgz && cd test && npm run clean"
   },
   "dependencies": {
     "mkdirp": "^0.5.1",

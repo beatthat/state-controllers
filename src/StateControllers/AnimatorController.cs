@@ -9,7 +9,6 @@ namespace BeatThat
 	/// Default StateParams impl for Animator.
 	/// Just does a pass through of param values.
 	/// </summary>
-	[RequireComponent(typeof(Animator))]
 	public class AnimatorController : MonoBehaviour, StateController
 	{
 		public bool m_debug;
@@ -27,6 +26,21 @@ namespace BeatThat
 		private UnityEvent<StateParamUpdate> m_paramUpdated;
 
 		public bool isReady { get { return this.animator.isInitialized; } }
+
+		#if UNITY_EDITOR
+		void Awake()
+		{
+			if(GetComponent<Animator>() == null) {
+				Debug.LogWarning("[" + Time.frameCount + "][" + this.Path() + "] AnimatorController has no animator!");
+				this.gameObject.AddComponent<Animator>(); // just to allow exec to continue w out null error
+			}
+		}
+
+		void Reset()
+		{
+			this.gameObject.AddIfMissing<Animator>(); // don't use RequireComponent. Need to know if this is missing at runtime
+		}
+		#endif
 
 		public UnityEvent<StateParamUpdate> GetParamUpdated(string param)
 		{
