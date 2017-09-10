@@ -1,11 +1,12 @@
 {
-  "name": "unity-state-controllers",
-  "version": "0.0.3",
-  "description": "cManage state for an object as a collection of bool, float, and int properties (as Animator does) while also allowing those properties to be more easily shared (as Components)",
+  "name": "state-controllers",
+  "scope": "ape",
+  "version": "0.0.4",
+  "description": "Manage state for an object as a collection of bool, float, and int properties (as Animator does) while also allowing those properties to be more easily shared (as Components)",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/beatthat/unity-state-controllers.git"
+    "url": "git+https://github.com/beatthat/state-controllers.git"
   },
   "files": [
     "index.js",
@@ -15,24 +16,23 @@
   "author": "larrykirschner@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/beatthat/unity-state-controllers/issues"
+    "url": "https://github.com/beatthat/state-controllers/issues"
   },
-  "homepage": "https://github.com/beatthat/unity-state-controllers",
+  "homepage": "https://github.com/beatthat/state-controllers",
   "scripts": {
     "postinstall": "node scripts/postinstall.js",
     "install:test": "rm -f *.tgz && npm pack && cd test && npm run clean && npm install",
-    "clean": "rm -f *.tgz && cd test && npm run clean"
+    "clean": "rm -f *.tgz && cd test && npm run clean",
+    "sync:test2src": "rsync -rv --include '*/' --include '*.cs' --exclude '*' --prune-empty-dirs test/Assets/Plugins/${npm_package_scope}/${npm_package_name}/ ./src/${npm_package_name}/",
+    "pub:tag": "git add -A && git commit -m ${npm_package_version} && git tag -a ${npm_package_version} -m ${npm_package_version} && git push origin master && git push origin ${npm_package_version}"
   },
   "dependencies": {
     "mkdirp": "^0.5.1",
     "ncp": "^2.0.0",
-    "unity-controller-interfaces": "beatthat/unity-controller-interfaces#semver:^0.0.1",
-    "unity-bindings": "beatthat/unity-bindings#semver:^0.0.3",
-    "unity-binding-behaviours": "beatthat/unity-binding-behaviours#semver:^0.0.9",
-    "unity-controller-interfaces": "beatthat/unity-controller-interfaces#semver:^0.0.1",
-    "unity-utils": "beatthat/unity-utils#semver:^0.0.5",
-    "unity-pools": "beatthat/unity-pools#semver:^0.0.5",
-    "unity-properties": "beatthat/unity-properties#semver:^0.0.6",
-    "unity-extensions": "beatthat/unity-extensions#semver:^0.0.2"
+    "bindings": "beatthat/bindings#semver:^0.0.4",
+    "binding-behaviours": "beatthat/binding-behaviours#semver:^0.0.12",
+    "controller-interfaces": "beatthat/controller-interfaces#semver:^0.0.2",
+    "pools": "beatthat/pools#semver:^0.0.7",
+    "property-interfaces": "beatthat/property-interfaces#semver:^0.0.3"
   }
 }

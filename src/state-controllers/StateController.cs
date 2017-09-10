@@ -8,7 +8,7 @@ namespace BeatThat
 	public enum StateParamOptions { RequireParam = 0, DontRequireParam = 1 }
 
 	/// <summary>
-	/// Params that control a state machine.
+	/// Controller for set of params that drive a state machine.
 	/// Used first and foremost as a wrapper for mechanim Animator components which have various problems
 	/// when used as a state-machine solution.
 	/// 
@@ -20,7 +20,6 @@ namespace BeatThat
 	/// </summary>
 	public interface StateController 
 	{
-//		UnityEvent<StateParam> setParamCalled { get; }
 		UnityEvent<StateParamUpdate> paramUpdated { get; }
 
 		/// <summary>
