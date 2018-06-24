@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+using BeatThat.Controllers;
+using BeatThat.Properties;
+using UnityEngine;
 using System;
 
-namespace BeatThat
+namespace BeatThat.StateControllers
 {
 	/// <summary>
 	/// Direct copy of UnityEngine AnimatorControllerParam
@@ -44,3 +46,4 @@ namespace BeatThat
 		override public string ToString() { return "[StateParam name=" + this.name + ", type=" + this.type + "]"; }
 	}
 }
+

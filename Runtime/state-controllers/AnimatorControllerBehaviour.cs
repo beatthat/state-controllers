@@ -1,7 +1,11 @@
-﻿using UnityEngine;
-using BeatThat;
+using BeatThat.GetComponentsExt;
+using BeatThat.CollectionsExt;
+using BeatThat.Controllers;
+using BeatThat.Bindings;
+using BeatThat.Properties;
+using UnityEngine;
 
-namespace BeatThat
+namespace BeatThat.StateControllers
 {
 	public class AnimatorControllerBehaviour : AnimatorControllerBehaviour<Animator> {}
 
@@ -113,3 +117,7 @@ namespace BeatThat
 		protected ModelType model  { get { return this.controller != null? this.controller.model: null; } }
 	}
 }
+
+
+
+

@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+using BeatThat.Controllers;
+using BeatThat.Properties;
+using UnityEngine;
 using System;
 
-namespace BeatThat
+namespace BeatThat.StateControllers
 {
 	/// <summary>
 	/// dispatched when a state param is updated
@@ -44,3 +46,4 @@ namespace BeatThat
 		override public string ToString() { return "[StateParamUpdate name=" + this.name + ", type=" + this.type + "]"; }
 	}
 }
+

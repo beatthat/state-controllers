@@ -1,4 +1,5 @@
-﻿namespace BeatThat
+using BeatThat.Properties;
+namespace BeatThat.StateControllers
 {
 	/// <summary>
 	/// On state param updates, particularly in the case of a trigger that has cleared, better to have an explicit TriggerClear instead of hack Bool = false 

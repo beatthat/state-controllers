@@ -1,8 +1,9 @@
-﻿using System;
+using BeatThat.Properties;
+using System;
 using UnityEngine;
 
 
-namespace BeatThat
+namespace BeatThat.StateControllers
 {
 	/// <summary>
 	/// A parameter has a 'param' name

@@ -1,9 +1,12 @@
-﻿using UnityEngine.Events;
+using BeatThat.Controllers;
+using BeatThat.Properties;
+using UnityEngine.Events;
 using System.Collections.Generic;
 using System;
+using UnityEngine;
 
 
-namespace BeatThat
+namespace BeatThat.StateControllers
 {
 	public enum StateParamOptions { RequireParam = 0, DontRequireParam = 1 }
 
@@ -48,8 +51,38 @@ namespace BeatThat
 
 		void ClearTrigger(string name, PropertyEventOptions eventOpts = PropertyEventOptions.SendOnChange, StateParamOptions reqOpts = StateParamOptions.RequireParam);
 
+//		bool HasParam (string name);
+
 		void GetParams(ICollection<StateParam> results);
 
 		void GetParamNames(ICollection<string> results);
 	}
+
+	namespace StateControllerExtensions
+	{
+//		public static class StateControllerExt
+//		{
+//			/// <summary>
+//			/// Add a param type to a GameObject if
+//			/// </summary>
+//			/// <typeparam name="T">The 1st type parameter.</typeparam>
+//			public static bool SetIfSupported<ParamType, ValueType>(this GameObject go, ValueType value) where ParamType : Component, Param, IHasValue<ValueType>
+//			{
+//				var p = go.GetComponent<ParamType> ();
+//				if (p != null) {
+//					p.value = value;
+//					return true;
+//				}
+//
+//				var stateController = go.GetComponent<StateController> ();
+//				if (stateController == null) {
+//					return false;
+//				}
+//
+//				return true;
+//			}
+//		}
+	}
 }
+
+

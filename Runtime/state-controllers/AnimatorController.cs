@@ -1,9 +1,15 @@
-﻿using UnityEngine;
+using BeatThat.TransformPathExt;
+using BeatThat.GetComponentsExt;
+using BeatThat.Pools;
+using BeatThat.CollectionsExt;
+using BeatThat.Controllers;
+using BeatThat.Properties;
+using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Events;
 using System;
 
-namespace BeatThat
+namespace BeatThat.StateControllers
 {
 	/// <summary>
 	/// Default StateParams impl for Animator.
@@ -417,3 +423,9 @@ namespace BeatThat
 
 	}
 }
+
+
+
+
+
+
